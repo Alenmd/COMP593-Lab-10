@@ -66,8 +66,8 @@ def get_pokemon_names(limit=100000, offset=0):
         print(f'Response code: {resp_msg.status_code} ({resp_msg.reason})')
 
 def get_pokemon_image_url(pokemon_name):
-    response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}/')
-    data = response.json()
+    resp = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}/')
+    data = resp.json()
     image_url = data['sprites']['other']['official-artwork']['front_default']
     return image_url
 
